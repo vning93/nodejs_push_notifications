@@ -29,6 +29,7 @@ router.post('/', function(req, res, next) {
         // note.alert = "";
         note.badge = value.badge;
         note.alert = {"body": value.alertBody, "action-loc-key": value.alertActionLocKey};
+        note.payload = {"payload": value.payload};
 
         apnConnection.pushNotification(note, myDevice);
 
